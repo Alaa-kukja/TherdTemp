@@ -104,9 +104,9 @@ document.addEventListener('click', (e) => {
     // if (e.target.className == 'closeBtn') {
     //     document.body.removeChild(popOverlay);
     // }
-    if (e.target.classList.contains('closeBtn')) {
+    if (e.target.className == 'closeBtn') {
         e.target.parentNode.remove();
-        document.querySelector('.popOverlay').remove();
+        document.querySelector('.overlay_popup').remove();
     }
 });
 
