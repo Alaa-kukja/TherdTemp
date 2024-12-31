@@ -21,6 +21,11 @@
             rel="stylesheet">
     </head>
     <body>
+
+        <div class="up">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
         <div class="header"
             id="header">
             <div class="container">
@@ -75,6 +80,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="landing">
             <div class="container">
                 <div class="text">
@@ -92,6 +98,7 @@
                 <i class="fas fa-angle-double-down fa-2x"></i>
             </a>
         </div>
+
         <div class="articles"
             id="articles">
             <h2 class="main-title">articles</h2>
@@ -213,25 +220,25 @@
                 <div class="box">
                     <div class="image">
                         <img src="imgs/gallery-01.png"
-                            alt="" />
+                            alt="Image One" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
                         <img src="imgs/gallery-02.png"
-                            alt="" />
+                            alt="Image Two" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
                         <img src="./imgs/gallery-03.jpg"
-                            alt="" />
+                            alt="Image Three" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
                         <img src="imgs/gallery-04.png"
-                            alt="" />
+                            alt="Image Four" />
                     </div>
                 </div>
                 <div class="box">
@@ -248,6 +255,7 @@
                 </div>
             </div>
         </div>
+
         <div class="features"
             id="features">
             <div class="dots dots-up"></div>
@@ -280,6 +288,7 @@
                 </div>
             </div>
         </div>
+
         <div class="testimonials"
             id="testimonials">
             <h2 class="main-title">testimonials</h2>
@@ -394,6 +403,7 @@
                 </div>
             </div>
         </div>
+
         <div class="team"
             id="team">
 
@@ -593,7 +603,9 @@
                 </div>
             </div>
         </div>
+
         <div class="spikes"></div>
+
         <div class="services"
             id="services">
             <h2 class="main-title">services</h2>
@@ -642,6 +654,7 @@
                 </div>
             </div>
         </div>
+
         <div class="our-skills"
             id="our-skills">
             <h2 class="main-title">our skills</h2>
@@ -650,32 +663,41 @@
                     alt="">
                 <div class="skills">
                     <div class="skill">
-                        <h3>HTML <span>80%</span></h3>
+                        <h3>HTML <span class="percent"
+                                data-percent="80">80%</span></h3>
                         <div class="the-progress">
-                            <span style="width: 80%;"></span>
+                            <span style="width: 0;"
+                                data-width="80%"></span>
                         </div>
                     </div>
                     <div class="skill">
-                        <h3>CSS <span>85%</span></h3>
+                        <h3>CSS <span class="percent"
+                                data-percent="85">85%</span></h3>
                         <div class="the-progress">
-                            <span style="width: 85%"></span>
+                            <span style="width: 0"
+                                data-width="85%"></span>
                         </div>
                     </div>
                     <div class="skill">
-                        <h3>JavaScript <span>70%</span></h3>
+                        <h3>JavaScript <span class="percent"
+                                data-percent="70">70%</span></h3>
                         <div class="the-progress">
-                            <span style="width: 70%"></span>
+                            <span style="width: 0"
+                                data-width="70%"></span>
                         </div>
                     </div>
                     <div class="skill">
-                        <h3>Python <span>80%</span></h3>
+                        <h3>Python <span class="percent"
+                                data-percent="80">80%</span></h3>
                         <div class="the-progress">
-                            <span style="width: 80%"></span>
+                            <span style="width: 0"
+                                data-width="80%"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="work-steps"
             id="work-steps">
             <h2 class="main-title">HOW IT WORKS ?</h2>
@@ -723,6 +745,7 @@
                 </div>
             </div>
         </div>
+
         <div class="events"
             id="events">
             <h2 class="main-title">LATEST EVENTS</h2>
@@ -766,7 +789,9 @@
             </div>
 
         </div>
+
         <div class="spikes"></div>
+
         <div class="pricing"
             id="pricing">
             <div class="dots dots-up"></div>
@@ -827,36 +852,89 @@
                 </div>
             </div>
         </div>
+
         <div class="video"
             id="video">
             <h2 class="main-title">top videos</h2>
-            <div class="container">
-                <div class="holder">
+            <div class="containerV">
+                <div class="holderNw">
+                    <div class="main-video">
+                        <div class="video1">
+                            <video src="imgs/vid-1.mp4"
+                                controls
+                                muted
+                                autoplay></video>
+                            <h3 class="title">01. Here the Title</h3>
+                        </div>
+                    </div>
                     <div class="list">
                         <div class="name">
                             Top videos
                             <i class="fas fa-random"></i>
                         </div>
-                        <ul>
-                            <li>How To Create Sub Domain<span>05:18</span></li>
-                            <li>Playing With The DNS <span>03:18</span></li>
-                            <li>Everything About The Virtual Hosts <span>05:25</span></li>
-                            <li>How To Monitor Your Website <span>04:16</span></li>
-                            <li>Uncharted Beating The Last Boss <span>07:48</span></li>
-                            <li>Ys Oath In Felghana Overview <span>03:12</span></li>
-                            <li>Ys Series All Games Ending <span>08:10</span></li>
-                        </ul>
-                    </div>
-                    <div class="preview">
-                        <img src="imgs/video-preview.jpg"
-                            alt="">
-                        <div class="info">
-                            Everything About The Virtual Hosts
+                        <div class="video-list">
+
+                            <div class="vid">
+                                <video src="imgs/vid-1.mp4"
+                                    muted></video>
+                                <h3 class="title">01. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-2.mp4"
+                                    muted></video>
+                                <h3 class="title">02. Here the Title</h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-3.mp4"
+                                    muted></video>
+                                <h3 class="title">03. Here the Title</h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-4.mp4"
+                                    muted></video>
+                                <h3 class="title">04. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-5.mp4"
+                                    muted></video>
+                                <h3 class="title">05. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-6.mp4"
+                                    muted></video>
+                                <h3 class="title">06. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-7.mp4"
+                                    muted></video>
+                                <h3 class="title">07. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-8.mp4"
+                                    muted></video>
+                                <h3 class="title">08. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-9.mp4"
+                                    muted></video>
+                                <h3 class="title">09. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-10.mp4"
+                                    muted></video>
+                                <h3 class="title">10. Here the Title </h3>
+                            </div>
+                            <div class="vid">
+                                <video src="imgs/vid-11.mp4"
+                                    muted></video>
+                                <h3 class="title">11. Here the Title </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="stats"
             id="stats">
             <div class="dots dots-up"></div>
@@ -865,26 +943,31 @@
             <div class="container">
                 <div class="box">
                     <i class="far fa-user fa-2x fa-fw"></i>
-                    <span class="number">150</span>
+                    <span class="number"
+                        data-goal="150">0</span>
                     <span class="text">Clients</span>
                 </div>
                 <div class="box">
                     <i class="fas fa-code fa-2x fa-fw"></i>
-                    <span class="number">135</span>
+                    <span class="number"
+                        data-goal="135">0</span>
                     <span class="text">Projects</span>
                 </div>
                 <div class="box">
                     <i class="fas fa-globe-asia fa-2x fa-fw"></i>
-                    <span class="number">50</span>
+                    <span class="number"
+                        data-goal="50">0</span>
                     <span class="text">Countries</span>
                 </div>
                 <div class="box">
                     <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
-                    <span class="number">500</span>
+                    <span class="number"
+                        data-goal="500">0</span>
                     <span class="text">Money</span>
                 </div>
             </div>
         </div>
+
         <div class="discount"
             id="discount">
             <div class="image">
@@ -926,6 +1009,7 @@
                 </div>
             </div>
         </div>
+
         <div class="footer">
             <div class="container">
                 <div class="box">
@@ -951,7 +1035,8 @@
                         </li>
                     </ul>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est possimus perspiciatis
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est possimus
+                            perspiciatis
                             expedita quaerat explicabo cumque</p>
                     </div>
                 </div>
@@ -998,6 +1083,6 @@
             </div>
             <p class="copyright">Made With &lt;3 By Elzero</p>
         </div>
-
+        <script src="script.js"></script>
     </body>
 </html>

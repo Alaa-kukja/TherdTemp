@@ -21,6 +21,52 @@ body {
     font-family: 'Cairo', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f6f6f6;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color-alt);
+    border-radius: 6px;
+
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--main-color);
+}
+
+.up {
+    position: fixed;
+    background-color: var(--main-color);
+    color: white;
+    right: -40px;
+    bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 8px;
+    cursor: pointer;
+
+    z-index: 1000;
+    transition: var(--main-transition);
+
+    i {
+        color: white;
+    }
+
+    &.show {
+        right: 10px;
+        animation: bouncing 1.5s infinite;
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -138,8 +184,11 @@ ul {
 .header {
     background-color: white;
     box-shadow: 0 0 10px #ddd;
-    position: relative;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .header .container {
@@ -177,11 +226,12 @@ ul {
     }
 }
 
+/* 
 .header .main-menu>li:hover .mega-menu {
     opacity: 1;
     top: calc(100% + 1px);
     z-index: 100;
-}
+} */
 
 .header .main-menu>li>a {
     display: flex;
@@ -231,12 +281,19 @@ ul {
     background-color: white;
     border-bottom: 4px solid var(--main-color);
     padding: 30px;
-    display: flex;
+    /* display: flex; */
     gap: 40px;
     top: calc(100% + 50px);
     transition: top var(--main-transition), opacity var(--main-transition);
     z-index: -1;
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
+}
+
+.header .mega-menu.show {
+    /* opacity: 1; */
+    top: calc(100% + 1px);
+    display: flex;
 }
 
 .header .mega-menu .links {
@@ -602,6 +659,52 @@ ul {
 
 .gallery .box .image:hover img {
     transform: rotate(5deg) scale(1.1);
+}
+
+.overlay_popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 10000;
+
+    .popup_box {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10001;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+
+        h3 {
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 20px;
+            color: var(--main-color);
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .closeBtn {
+            position: absolute;
+            background-color: red;
+            color: white;
+            right: -20px;
+            top: -20px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
 }
 
 .features {
@@ -1055,7 +1158,7 @@ ul {
     left: 0;
     background-color: var(--main-color);
     height: 100%;
-    /* transition: data-width 0.5s linear; */
+    transition: width 0.5s linear;
 
 }
 
@@ -1201,7 +1304,7 @@ ul {
     display: block;
     font-weight: bold;
     font-size: 35px;
-    padding: 15px;
+    padding: 15px 8px;
     color: var(--main-color);
 }
 
@@ -1442,74 +1545,138 @@ ul {
     color: white;
 }
 
+
+/* Start Video Section from Youtube*/
 .video {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
-}
 
-.video .holder {
-    display: flex;
-    justify-content: center;
-    background-color: var(--section-background);
-    border: 1px solid #ddd;
-}
+    .containerV {
 
-@media (max-width: 991px) {
-    .video .holder {
-        flex-direction: column;
+
+        .holderNw {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 3%;
+            margin: auto 30px;
+            background-color: #eee;
+
+            @media (min-width:991px) {
+                grid-template-columns: 1.5fr 1fr;
+                padding: 10px;
+
+            }
+
+            @media (max-width:768px) {
+                grid-template-columns: 1fr;
+            }
+
+            .main-video {
+                background-color: #fff;
+                border-radius: 6px;
+                padding: 15px;
+
+
+                .video1 {
+                    /* padding: 45px 0; */
+
+
+                    video {
+                        width: 100%;
+                        border-radius: 6px;
+                        text-align: center;
+                    }
+
+                    .title {
+                        color: #333;
+                        font-size: 23px;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        text-align: left;
+                    }
+                }
+
+
+            }
+
+            .name {
+                /* position: fixed; */
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                font-weight: bold;
+                background-color: #f4f4f4;
+                color: var(--main-color);
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+            }
+
+            .video-list {
+                background: #fff;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-end-start-radius: 6px;
+                border-end-end-radius: 6px;
+                height: 580px;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    width: 7px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #666;
+                    border-radius: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #ccc;
+                    border-radius: 6px;
+                }
+
+
+                .vid {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 6px;
+                    background: #f7f7f7;
+                    padding: 15px;
+                    margin: 15px;
+                    border: 1px solid rgba(0, 0, 0, .1);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #eee;
+                    }
+
+                    &.active {
+                        background-color: var(--main-color);
+
+                        .title {
+                            color: #fff;
+                        }
+                    }
+
+                    video {
+                        width: 100px;
+                    }
+
+                    .title {
+                        font-size: 17px;
+                        color: #333;
+                    }
+                }
+            }
+        }
     }
 }
 
-.video .list {
-    min-width: 300px;
-    background-color: white;
-}
 
-.video .list .name {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    font-weight: bold;
-    background-color: #f4f4f4;
-    color: var(--main-color);
-}
 
-.video .list ul li {
-    padding: 20px;
-    border-top: 1px solid var(--section-background);
-    cursor: pointer;
-    transition: var(--main-transition);
-}
-
-.video .list ul li:hover {
-    color: var(--main-color);
-    background-color: #fafafa;
-}
-
-.video .list ul li span {
-    display: block;
-    margin-top: 10px;
-    color: #777;
-}
-
-.video .holder .preview {
-    padding: 10px;
-    background-color: #e2e2e2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.video .preview img {
-    max-width: 100%;
-}
-
-.video .preview .info {
-    padding: 20px;
-    background-color: white;
-    margin-top: 10px;
-}
-
+/* End Video Section from Youtube*/
 .stats {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
